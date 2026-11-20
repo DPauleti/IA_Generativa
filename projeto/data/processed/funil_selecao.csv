@@ -1,9 +1,0 @@
-etapa,registros,removidos
-Registros únicos (ID OpenAlex),471,0
-Remoção de duplicatas por DOI,470,1
-Remoção de duplicatas por título,424,46
-"Tipo documental (artigo, revisão, evento, capítulo, preprint)",375,49
-"Idioma (en, pt, es)",357,18
-Resumo válido (50 a 1000 palavras),309,48
-Relevância: menciona IA generativa e contexto pedagógico,307,2
-Centralidade: IA generativa no título ou >= 2 menções no resumo,208,99

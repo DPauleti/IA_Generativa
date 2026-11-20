@@ -1,8 +1,0 @@
-requests>=2.31
-pandas>=2.2
-scikit-learn>=1.4
-matplotlib>=3.8
-langdetect>=1.0.9
-nbformat>=5.9
-nbconvert>=7.16
-ipykernel>=6.29

@@ -1,9 +1,0 @@
-{
-  "anos": "2023-2026",
-  "consultas": {
-    "Q1": "(\"generative artificial intelligence\" OR \"generative AI\" OR ChatGPT OR \"large language model\" OR \"large language models\" OR GPT-4) AND (\"distance education\" OR \"distance learning\" OR \"open and distance learning\")",
-    "Q2": "(\"generative artificial intelligence\" OR \"generative AI\" OR ChatGPT OR \"large language model\" OR \"large language models\" OR GPT-4) AND (\"online learning\" OR \"online education\") AND \"higher education\"",
-    "Q3": "(\"inteligência artificial generativa\" OR \"IA generativa\" OR ChatGPT OR \"inteligencia artificial generativa\") AND (\"educação a distância\" OR \"ensino a distância\" OR \"educación a distancia\" OR EaD)"
-  },
-  "data_coleta": "2026-09-25"
-}
