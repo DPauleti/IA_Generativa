@@ -15,10 +15,49 @@
 #   2026-09-25 - Daniel Ribeiro Pauleti - Versão inicial do codebook (v1).
 #   2026-09-25 - Daniel Ribeiro Pauleti - Padrões mais restritos para reduzir falsos
 #                positivos (ex.: "exam" x "examines", "etic" x "theoretical").
+#   2026-11-20 - Daniel Ribeiro Pauleti - Codebook v1.1: critérios de inclusão e
+#                exclusão por categoria (CRITERIOS), usados na página de anotação.
+#                Padrões léxicos congelados antes da anotação do conjunto de teste.
 # =============================================================================
 import re
 
 import pandas as pd
+
+VERSAO_CODEBOOK = "1.1"
+
+# Regra geral: marcar a categoria apenas quando o texto RECOMENDA, PROPÕE, ORIENTA
+# ou CONCLUI algo sobre ela; a simples menção ao tema não basta.
+# código -> (inclui, não inclui)
+CRITERIOS = {
+    "APR_ATIVA": ("Tutoria, feedback formativo, prática guiada, personalização e "
+                  "autorregulação com IA como parceira de estudo.",
+                  "IA usada só pelo professor para gerar conteúdo; menção genérica a "
+                  "'engajamento' sem orientação de uso."),
+    "AUTORIA": ("Plágio, declaração/transparência do uso, políticas de integridade, "
+                "detectores de texto gerado, autoria dos trabalhos.",
+                "Ética genérica sem relação com autoria (usar ÉTICA)."),
+    "PENS_CRITICO": ("Estimular argumentação, análise e reflexão; evitar dependência "
+                     "ou 'terceirização' do raciocínio.",
+                     "Criatividade sem relação com raciocínio crítico."),
+    "VERIFICACAO": ("Checar exatidão, alucinações, fontes e confiabilidade das "
+                    "respostas da IA antes de usá-las.",
+                    "Medir o desempenho do modelo em provas sem orientação ao estudante "
+                    "ou professor."),
+    "ETICA": ("Vieses, equidade, transparência, uso responsável, impactos sociais, "
+              "diretrizes éticas.",
+              "Privacidade (usar PRIVACIDADE) e integridade acadêmica (usar AUTORIA), "
+              "salvo se o texto também tratar de ética em sentido amplo."),
+    "AVALIACAO": ("Redesenho de avaliações (autênticas, orais, por processo), regras de "
+                  "uso da IA em avaliações, correção/feedback avaliativo com IA.",
+                  "'Avaliação' no sentido de avaliar o próprio estudo, a ferramenta ou "
+                  "um programa."),
+    "PRIVACIDADE": ("Dados pessoais de estudantes, consentimento, segurança da "
+                    "informação, LGPD/GDPR.",
+                    "—"),
+    "LETRAMENTO": ("AI literacy, formação de estudantes e professores para usar a IA, "
+                   "engenharia de prompts, compreensão do funcionamento e limites da IA.",
+                   "Competência digital genérica sem relação com IA."),
+}
 
 # código -> (nome, definição operacional, padrões léxicos EN/PT/ES)
 CATEGORIAS = {

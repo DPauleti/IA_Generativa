@@ -1,0 +1,209 @@
+openalex_id,APR_ATIVA,AUTORIA,PENS_CRITICO,VERIFICACAO,ETICA,AVALIACAO,PRIVACIDADE,LETRAMENTO,evidencias_lexico
+W4353008813,1,0,1,0,1,1,1,0,"APR_ATIVA: personaliz, tutor; PENS_CRITICO: overreliance; ETICA: bias, equit, transparen; AVALIACAO: grading; PRIVACIDADE: privacy, security"
+W4367184597,0,0,1,0,1,0,0,1,PENS_CRITICO: creativ; ETICA: responsib; LETRAMENTO: professional development
+W4377094181,0,1,0,0,1,1,0,0,AUTORIA: academic integrity; ETICA: ethic; AVALIACAO: assessment
+W4386149392,1,0,0,0,1,0,1,1,"APR_ATIVA: engagement, personalis, personaliz, tutor; ETICA: bias, ethic, responsib; PRIVACIDADE: privacy; LETRAMENTO: professional development"
+W4387384844,1,0,0,0,0,0,0,0,APR_ATIVA: personaliz
+W4388490750,0,0,0,0,0,0,0,0,
+W4388556598,1,0,1,0,0,0,0,1,"APR_ATIVA: personaliz, self-directed; PENS_CRITICO: reflective; LETRAMENTO: literac"
+W4388878390,0,0,0,1,0,1,0,0,VERIFICACAO: reliab; AVALIACAO: assessment
+W4389729898,0,0,0,0,0,1,0,1,AVALIACAO: avaliaç; LETRAMENTO: letramento
+W4390099321,1,0,0,1,1,0,1,0,"APR_ATIVA: personalis; VERIFICACAO: accuracy, reliab; ETICA: ethic; PRIVACIDADE: privacy, security"
+W4396886883,1,1,1,0,0,0,0,0,"APR_ATIVA: feedback, personaliz; AUTORIA: academic integrity; PENS_CRITICO: critical thinking"
+W7138370207,0,0,0,0,0,1,0,0,AVALIACAO: assignment
+W4391683257,1,0,0,0,0,1,0,0,"APR_ATIVA: feedback, personaliz, self-directed; AVALIACAO: examination"
+W4392163660,1,0,0,0,0,0,0,0,APR_ATIVA: active learning
+W4392550084,0,0,0,0,0,0,0,0,
+W4392706454,1,0,0,0,1,0,0,0,"APR_ATIVA: engagement; ETICA: ethic, responsib"
+W4392755720,0,0,0,0,0,0,0,0,
+W4393177724,1,0,0,0,0,0,0,0,"APR_ATIVA: personalis, tutor"
+W4393212042,1,1,0,0,1,0,1,0,APR_ATIVA: personalis; AUTORIA: academic integrity; ETICA: ethic; PRIVACIDADE: privacy
+W4393855080,1,0,1,1,1,1,0,0,"APR_ATIVA: personaliz, tutor; PENS_CRITICO: critical thinking; VERIFICACAO: accuracy, reliab; ETICA: bias, ethic, responsib; AVALIACAO: assessment"
+W4393904586,0,0,0,0,0,0,0,0,
+W4393974814,1,1,0,0,1,0,0,0,"APR_ATIVA: personalis; AUTORIA: academic integrity, plagiar; ETICA: ethic"
+W4394764459,1,0,0,0,0,0,0,0,"APR_ATIVA: feedback, personalis"
+W4395083652,1,0,0,0,0,0,0,0,APR_ATIVA: feedback
+W4395954564,0,1,0,0,1,0,0,1,AUTORIA: academic integrity; ETICA: responsib; LETRAMENTO: prompting
+W4396617103,0,1,1,1,0,1,0,0,AUTORIA: disclos; PENS_CRITICO: critical thinking; VERIFICACAO: reliab; AVALIACAO: assignment
+W4398792209,0,0,1,0,0,0,0,0,"PENS_CRITICO: critical thinking, problem-solving"
+W4399137710,1,1,0,0,1,0,1,0,APR_ATIVA: personaliz; AUTORIA: academic integrity; ETICA: ethic; PRIVACIDADE: privacy
+W4400280294,0,0,0,1,1,0,0,0,"VERIFICACAO: confiabilidade, precisão; ETICA: ética"
+W4400389722,0,0,0,0,0,1,0,1,AVALIACAO: evaluación; LETRAMENTO: formación docente
+W4400737217,1,0,0,0,0,0,0,0,"APR_ATIVA: engagement, personaliz"
+W4400905278,0,1,0,0,0,1,0,0,AUTORIA: academic integrity; AVALIACAO: assessment
+W4400993461,0,0,0,0,0,0,0,0,
+W4401076948,1,0,0,0,0,0,0,1,APR_ATIVA: personaliz; LETRAMENTO: digital competenc
+W4401682439,1,0,1,1,0,0,0,0,"APR_ATIVA: personalis; PENS_CRITICO: creativ, critical thinking; VERIFICACAO: accurate"
+W4401991245,0,1,0,1,1,0,0,0,AUTORIA: ai generated text; VERIFICACAO: misinformation; ETICA: bias
+W4402279887,0,0,0,0,0,1,0,0,"AVALIACAO: assessment, grading"
+W4402355489,0,1,0,0,0,0,1,0,AUTORIA: academic integrity; PRIVACIDADE: privacy
+W4402514757,1,0,0,0,0,1,0,0,"APR_ATIVA: feedback, tutor; AVALIACAO: grading"
+W4402988803,1,0,0,0,0,0,0,0,APR_ATIVA: self-directed
+W4403073703,0,0,0,0,0,0,0,0,
+W4404123493,1,0,1,1,0,1,0,0,"APR_ATIVA: engagement, feedback; PENS_CRITICO: creativ; VERIFICACAO: accurate; AVALIACAO: assessment"
+W4404465350,1,0,0,0,1,1,0,0,APR_ATIVA: self-directed; ETICA: ethic; AVALIACAO: assessment
+W4404579247,0,0,0,0,0,0,0,0,
+W4404835226,1,0,0,0,0,1,0,1,"APR_ATIVA: active learning, engagement, feedback; AVALIACAO: assessment; LETRAMENTO: prompting"
+W4405108551,0,0,0,0,0,0,0,0,
+W4405530850,0,0,0,0,1,0,0,0,ETICA: ethic
+W4405612872,1,1,1,0,1,1,0,0,"APR_ATIVA: feedback, personaliz; AUTORIA: autoria, integridade acad; PENS_CRITICO: reflexão; ETICA: éticas; AVALIACAO: avaliaç"
+W4405849933,0,0,0,0,0,1,0,0,AVALIACAO: evaluación
+W4405855980,1,0,0,1,0,1,0,0,APR_ATIVA: personaliz; VERIFICACAO: reliab; AVALIACAO: assessment
+W4406478781,1,0,1,1,0,0,0,0,APR_ATIVA: personaliz; PENS_CRITICO: creativ; VERIFICACAO: hallucinat
+W4406530518,0,0,0,0,0,0,0,0,
+W4406621547,1,0,0,0,0,0,0,0,"APR_ATIVA: engagement, feedback, personaliz"
+W4406861215,1,0,0,1,0,1,0,0,"APR_ATIVA: personaliz, tutor; VERIFICACAO: reliab; AVALIACAO: assessment"
+W4407030373,1,0,0,0,0,1,0,0,APR_ATIVA: feedback; AVALIACAO: assessment
+W4408256943,0,0,0,0,0,0,0,1,LETRAMENTO: literac
+W4409219797,1,0,0,1,0,0,0,1,"APR_ATIVA: active learning; VERIFICACAO: accuracy, accurate; LETRAMENTO: prompt engineering"
+W4415521687,0,0,0,0,0,0,0,0,
+W4417167412,0,0,1,1,0,0,0,0,PENS_CRITICO: creativ; VERIFICACAO: accurate
+W7112312697,0,1,0,0,1,1,0,0,"AUTORIA: academic integrity; ETICA: ethic; AVALIACAO: assessment, assignment"
+W7153455618,1,0,0,0,0,0,0,0,APR_ATIVA: feedback
+W4406862817,1,0,1,0,0,1,0,0,"APR_ATIVA: self-regulat, tutor; PENS_CRITICO: reflection; AVALIACAO: exam"
+W4407218398,1,0,0,0,0,0,0,0,APR_ATIVA: engagement
+W4407641989,0,0,0,0,1,1,0,0,ETICA: ethic; AVALIACAO: assessment
+W4408494246,0,0,0,0,0,0,0,1,LETRAMENTO: professional development
+W4408694239,0,0,1,0,0,0,0,1,PENS_CRITICO: pensamento crítico; LETRAMENTO: formação de professores
+W4409195066,1,0,0,0,0,0,0,0,APR_ATIVA: personaliz
+W4409433843,1,1,0,0,1,0,1,0,"APR_ATIVA: feedback, personalis; AUTORIA: academic integrity; ETICA: ethic; PRIVACIDADE: privacy"
+W4410103166,1,0,0,1,1,0,0,1,APR_ATIVA: personaliz; VERIFICACAO: accuracy; ETICA: fairness; LETRAMENTO: prompting
+W4410130715,1,0,0,0,0,0,0,0,APR_ATIVA: personaliz
+W4410229794,1,0,0,0,0,1,0,0,APR_ATIVA: personaliz; AVALIACAO: assessment
+W4410518138,1,0,1,0,0,0,0,0,"APR_ATIVA: engagement, feedback, personaliz; PENS_CRITICO: critical thinking"
+W4410564368,0,0,0,0,1,0,1,0,ETICA: ethic; PRIVACIDADE: security
+W4410684479,0,0,1,0,1,1,0,1,"PENS_CRITICO: pensamiento crítico, reflexiv; ETICA: equit, sesgo, ético; AVALIACAO: evaluación; LETRAMENTO: alfabetización, formación docente"
+W4410889658,0,0,0,0,0,0,0,0,
+W4411095338,1,0,0,1,0,0,0,0,APR_ATIVA: feedback; VERIFICACAO: accuracy
+W4411493158,1,1,1,1,1,1,0,0,"APR_ATIVA: engagement; AUTORIA: cheat; PENS_CRITICO: creativ, dependence on; VERIFICACAO: fabricat; ETICA: ethic; AVALIACAO: assignment"
+W4411502539,1,0,0,0,0,0,0,0,APR_ATIVA: personaliz
+W4411547561,1,0,1,0,0,1,0,0,"APR_ATIVA: personalis, self-regulat; PENS_CRITICO: creativ; AVALIACAO: assessment"
+W4411893873,1,0,1,1,0,0,0,0,"APR_ATIVA: engagement, tutor; PENS_CRITICO: higher-order; VERIFICACAO: hallucinat, misinformation"
+W4412159127,1,0,1,0,0,1,0,0,"APR_ATIVA: engagement, feedback, tutor; PENS_CRITICO: higher-order; AVALIACAO: assignment"
+W4412361456,1,0,1,0,0,0,0,0,"APR_ATIVA: feedback, tutor; PENS_CRITICO: reflective"
+W4412560314,0,0,0,0,0,1,0,0,"AVALIACAO: assessment, assignment"
+W4413020079,1,0,0,0,0,0,0,0,APR_ATIVA: engagement
+W4413223590,0,0,1,0,0,0,0,1,"PENS_CRITICO: critical thinking, higher-order, problem-solving; LETRAMENTO: literac"
+W4413601929,0,0,0,0,1,0,0,1,ETICA: equit; LETRAMENTO: ai literacy
+W4413855131,0,1,1,0,1,1,1,0,"AUTORIA: academic integrity; PENS_CRITICO: critical thinking; ETICA: ethic, transparen; AVALIACAO: assessment; PRIVACIDADE: surveillance"
+W4414066954,1,0,1,0,1,1,1,1,"APR_ATIVA: personalis; PENS_CRITICO: critical thinking, problem-solving; ETICA: ethic; AVALIACAO: examination; PRIVACIDADE: privacy; LETRAMENTO: ai literacy, literac, professional development"
+W4414196196,0,0,1,0,1,0,0,0,PENS_CRITICO: over-reliance; ETICA: ethic
+W4414225389,1,0,0,0,0,0,0,0,APR_ATIVA: engagement
+W4414783023,0,1,0,0,0,0,1,0,AUTORIA: academic integrity; PRIVACIDADE: privacy
+W4414854798,1,0,1,0,0,0,0,0,APR_ATIVA: engagement; PENS_CRITICO: critical thinking
+W4414867940,1,0,0,0,0,1,0,1,APR_ATIVA: personaliz; AVALIACAO: assessment; LETRAMENTO: ai literacy
+W4414868213,0,0,0,1,0,0,0,0,VERIFICACAO: verify
+W4414951037,0,1,0,0,1,1,1,1,"AUTORIA: academic integrity, disclos, plagiar; ETICA: bias, equit, transparen; AVALIACAO: assessment, authentic assessment; PRIVACIDADE: surveillance; LETRAMENTO: literac"
+W4415263142,1,0,0,0,0,1,0,0,"APR_ATIVA: active learning, personalis; AVALIACAO: assessment"
+W4415402396,0,0,0,0,1,0,0,1,ETICA: responsáve; LETRAMENTO: formação docente
+W4415572994,1,0,1,1,1,0,0,0,"APR_ATIVA: scaffold, self-regulat, tutor; PENS_CRITICO: over-reliance; VERIFICACAO: accuracy; ETICA: bias, equit, ethic"
+W4415709414,1,0,1,1,0,0,0,0,"APR_ATIVA: personaliz; PENS_CRITICO: dependency on; VERIFICACAO: accuracy, hallucinat"
+W4415761656,0,0,1,0,0,1,0,0,"PENS_CRITICO: critical thinking; AVALIACAO: assessment, exam, grading"
+W4415996822,1,1,1,1,1,0,0,1,"APR_ATIVA: engagement, personaliz, scaffold; AUTORIA: academic integrity, plagiar; PENS_CRITICO: reflective; VERIFICACAO: verification; ETICA: equit, ethic, responsib; LETRAMENTO: literac"
+W4416541043,1,0,0,0,0,0,0,0,APR_ATIVA: feedback
+W4416661280,1,0,0,0,0,0,0,0,APR_ATIVA: personaliz
+W4416739244,0,0,0,0,0,0,0,0,
+W4416787633,1,1,0,1,0,1,0,0,"APR_ATIVA: feedback, personalis, tutor; AUTORIA: academic integrity; VERIFICACAO: accurate, hallucinat; AVALIACAO: assessment"
+W4416834163,1,0,0,0,1,0,0,0,APR_ATIVA: engagement; ETICA: equit
+W4416847236,1,0,1,0,1,1,0,0,"APR_ATIVA: metacogn, self-regulat; PENS_CRITICO: critical thinking, reflection; ETICA: equit, ethic, responsib; AVALIACAO: assignment"
+W4416970523,1,1,1,1,1,1,0,0,"APR_ATIVA: feedback; AUTORIA: cheat; PENS_CRITICO: reflection; VERIFICACAO: reliab; ETICA: equit, fairness; AVALIACAO: assessment, exam, exams"
+W4417037430,1,1,1,0,0,1,0,0,"APR_ATIVA: engagement; AUTORIA: academic integrity, detection tool; PENS_CRITICO: critical thinking, overreliance; AVALIACAO: assignment, examination"
+W4417233709,0,1,1,0,0,0,0,1,AUTORIA: autoria; PENS_CRITICO: reflexão; LETRAMENTO: formação docente
+W4417414478,1,0,1,0,0,1,0,0,"APR_ATIVA: engagement, feedback; PENS_CRITICO: reflection; AVALIACAO: assessment"
+W4417451686,1,1,1,0,1,1,0,1,"APR_ATIVA: engagement, metacogn; AUTORIA: academic integrity; PENS_CRITICO: higher-order, reflection; ETICA: ethic, transparen; AVALIACAO: assessment, assignment, authentic assessment; LETRAMENTO: ai literacy"
+W7104583919,0,0,0,1,0,0,0,1,VERIFICACAO: accuracy; LETRAMENTO: literac
+W7104633834,1,0,0,0,0,1,0,0,"APR_ATIVA: feedback; AVALIACAO: avaliaç, provas"
+W7106658287,1,0,0,0,1,1,0,0,"APR_ATIVA: personalis, tutor; ETICA: equit; AVALIACAO: assessment"
+W7111142382,0,0,0,0,0,0,0,0,
+W7114770013,0,0,1,1,0,0,0,0,"PENS_CRITICO: creativ, reflection; VERIFICACAO: accuracy"
+W7114805917,0,0,0,0,0,0,0,1,LETRAMENTO: formação docente
+W7117547437,1,0,0,0,1,0,0,1,"APR_ATIVA: engagement, feedback, personaliz; ETICA: equit, ethic; LETRAMENTO: literac"
+W7118859581,0,1,1,0,1,0,0,0,"AUTORIA: academic integrity; PENS_CRITICO: creativ, critical thinking; ETICA: ethic"
+W7122362737,1,0,0,0,0,0,0,0,APR_ATIVA: engagement
+W7123926276,1,0,0,1,1,1,0,0,"APR_ATIVA: feedback; VERIFICACAO: accuracy, reliab; ETICA: transparen; AVALIACAO: assessment, assignment, grading"
+W7125967910,1,0,0,0,1,0,0,1,"APR_ATIVA: engagement, metacogn, personaliz, tutor; ETICA: responsib; LETRAMENTO: professional development"
+W7127045366,1,0,1,0,1,0,0,0,"APR_ATIVA: metacogn; PENS_CRITICO: creativ, reflection; ETICA: ethic"
+W7127221464,0,1,1,0,1,1,0,0,"AUTORIA: integridade acad; PENS_CRITICO: reflexão; ETICA: responsáve, ética, éticos; AVALIACAO: assessment, avaliaç"
+W7128989738,1,0,0,0,1,1,1,1,"APR_ATIVA: engagement, personaliz, tutor; ETICA: bias, equit, ethic; AVALIACAO: grading; PRIVACIDADE: privacy; LETRAMENTO: ai literacy"
+W7131193376,0,0,1,0,1,0,0,0,"PENS_CRITICO: creativ; ETICA: ethic, éticas, éticos"
+W7131253211,1,1,0,1,1,0,0,1,"APR_ATIVA: personaliz; AUTORIA: autoria, integridade acad; VERIFICACAO: alucina, confiabilidade; ETICA: equidad; LETRAMENTO: literac"
+W7140498517,0,1,1,0,1,1,0,0,AUTORIA: academic integrity; PENS_CRITICO: critical thinking; ETICA: ethic; AVALIACAO: examination
+W7141495593,0,0,0,0,0,0,0,0,
+W7143338871,1,0,0,0,0,0,0,0,APR_ATIVA: active learning
+W7171810705,1,0,0,0,0,0,0,0,"APR_ATIVA: engagement, feedback, personaliz, retroaliment"
+W7122477614,1,0,0,0,0,0,1,0,"APR_ATIVA: feedback, personaliz; PRIVACIDADE: privacy, security"
+W7123343341,1,0,0,1,0,0,0,1,"APR_ATIVA: personaliz, self-directed; VERIFICACAO: verify; LETRAMENTO: prompt engineering"
+W7125788381,1,1,0,0,1,1,0,0,"APR_ATIVA: feedback, personaliz, tutor; AUTORIA: academic integrity; ETICA: ethic, fairness, responsib, transparen; AVALIACAO: assessment"
+W7125911838,1,1,1,0,1,1,0,0,"APR_ATIVA: personaliz; AUTORIA: academic integrity; PENS_CRITICO: higher-order; ETICA: ethic, transparen; AVALIACAO: assessment"
+W7126207768,0,1,0,1,0,0,0,0,"AUTORIA: academic integrity; VERIFICACAO: misinformation, reliab"
+W7128439520,0,0,0,0,0,1,0,0,AVALIACAO: assignment
+W7129045430,1,0,0,1,0,0,0,0,"APR_ATIVA: engagement, feedback, self-regulat, tutor; VERIFICACAO: reliab"
+W7130554621,0,1,0,1,1,0,0,0,AUTORIA: academic misconduct; VERIFICACAO: reliab; ETICA: ethic
+W7130830355,0,1,0,1,1,1,1,0,"AUTORIA: academic integrity, ai-generated text; VERIFICACAO: accuracy; ETICA: ethic, fairness, responsib, transparen; AVALIACAO: assessment; PRIVACIDADE: surveillance"
+W7131128545,0,1,0,0,1,1,0,0,"AUTORIA: academic integrity; ETICA: bias, ethic, responsib, transparen; AVALIACAO: assessment"
+W7131277856,1,0,1,1,1,1,0,0,"APR_ATIVA: feedback; PENS_CRITICO: over-reliance; VERIFICACAO: accuracy; ETICA: bias, ethic; AVALIACAO: assessment"
+W7135016998,0,0,0,0,1,0,0,0,"ETICA: equit, ethic, responsib"
+W7135034321,1,0,1,0,0,1,0,0,"APR_ATIVA: personaliz, tutor; PENS_CRITICO: creativ; AVALIACAO: assessment"
+W7136070787,0,0,0,0,0,0,0,0,
+W7138864620,1,0,0,0,0,0,0,0,"APR_ATIVA: engagement, feedback, personaliz, tutor"
+W7140107822,0,0,1,0,0,0,0,1,"PENS_CRITICO: creativ, reflection; LETRAMENTO: literac, professional development"
+W7147353273,0,0,0,0,0,0,0,0,
+W7151288754,1,0,1,0,0,0,0,0,"APR_ATIVA: engagement, feedback, metacogn, personaliz, self-regulat; PENS_CRITICO: reflective"
+W7154612155,1,0,0,0,0,0,0,0,"APR_ATIVA: engagement, feedback"
+W7154991549,1,0,0,0,0,0,0,1,APR_ATIVA: self-directed; LETRAMENTO: professional development
+W7155047818,1,0,0,0,0,0,0,0,"APR_ATIVA: engagement, feedback, metacogn, scaffold, tutor"
+W7155382113,0,0,0,1,1,1,0,0,"VERIFICACAO: inaccura, reliab; ETICA: equit; AVALIACAO: assessment"
+W7155692382,1,0,0,1,0,0,0,0,"APR_ATIVA: engagement, feedback, personaliz; VERIFICACAO: accuracy"
+W7160053966,1,0,1,0,1,0,0,1,"APR_ATIVA: engagement, scaffold, tutor; PENS_CRITICO: creativ, reflection, reflective, reflexiv; ETICA: equit, ethic, responsib; LETRAMENTO: literac"
+W7160061334,1,0,0,0,0,0,0,0,"APR_ATIVA: feedback, personalis, self-regulat, tutor"
+W7160235613,1,1,0,0,0,0,0,0,APR_ATIVA: engagement; AUTORIA: plagiar
+W7160255689,1,0,0,0,0,0,0,0,APR_ATIVA: tutor
+W7160501008,1,0,0,1,0,1,0,0,"APR_ATIVA: engagement; VERIFICACAO: accurate, hallucinat, verification; AVALIACAO: assessment"
+W7160709897,0,0,1,0,1,0,0,0,"PENS_CRITICO: creativ, reflective; ETICA: ethic"
+W7160859923,0,0,0,0,0,0,0,0,
+W7161397936,1,0,0,1,0,0,1,0,"APR_ATIVA: engagement, personaliz, tutor; VERIFICACAO: hallucinat; PRIVACIDADE: privacy"
+W7161538434,0,1,1,1,1,1,0,0,"AUTORIA: academic integrity; PENS_CRITICO: creativ; VERIFICACAO: accurate; ETICA: ethic, responsib; AVALIACAO: assessment"
+W7162262468,0,0,0,0,1,0,0,0,ETICA: ética
+W7162458493,1,0,0,0,0,0,0,0,"APR_ATIVA: engagement, feedback, personalis"
+W7162492967,0,1,0,1,1,1,1,0,"AUTORIA: academic integrity, cheat; VERIFICACAO: accuracy, verification; ETICA: fairness; AVALIACAO: assessment, examination; PRIVACIDADE: privacy, security"
+W7162783856,1,1,1,0,1,1,0,0,"APR_ATIVA: engagement; AUTORIA: academic integrity, authorship, disclos; PENS_CRITICO: reflective; ETICA: ethic, fairness, responsib, transparen; AVALIACAO: assessment, assignment, authentic assessment"
+W7163025170,0,0,0,0,1,0,1,0,"ETICA: bias, ethic, responsib, transparen; PRIVACIDADE: privacy"
+W7163184202,0,0,1,1,0,0,0,0,"PENS_CRITICO: dependence on, reflective; VERIFICACAO: verification"
+W7163456923,1,0,0,0,0,0,0,0,"APR_ATIVA: feedback, personaliz"
+W7164026277,1,0,0,0,0,0,0,0,APR_ATIVA: engagement
+W7164050747,1,0,0,1,1,1,0,0,"APR_ATIVA: tutor; VERIFICACAO: hallucinat, inaccura, reliab, verification; ETICA: equit; AVALIACAO: exam"
+W7164314708,0,1,0,0,1,0,0,0,AUTORIA: academic integrity; ETICA: trustworth
+W7165014212,1,0,1,0,1,1,0,1,"APR_ATIVA: engagement, tutor; PENS_CRITICO: critical thinking, reflection; ETICA: ethic, responsib; AVALIACAO: assessment, assignment; LETRAMENTO: professional development"
+W7165062353,1,0,0,0,0,0,0,0,"APR_ATIVA: engagement, scaffold"
+W7165644654,0,0,0,0,0,1,0,0,AVALIACAO: examination
+W7166651692,1,1,1,1,1,1,0,0,"APR_ATIVA: feedback, personaliz; AUTORIA: academic integrity; PENS_CRITICO: cognitive offload; VERIFICACAO: accuracy; ETICA: ethic; AVALIACAO: assessment, authentic assessment"
+W7167247617,1,0,1,0,0,0,0,0,APR_ATIVA: engagement; PENS_CRITICO: critical thinking
+W7167619273,0,0,0,0,1,0,0,1,"ETICA: responsáve, ética; LETRAMENTO: formação de professores"
+W7167790557,1,1,0,0,1,1,1,0,"APR_ATIVA: engagement, feedback, scaffold, self-regulat; AUTORIA: academic integrity; ETICA: equit, ethic, responsib, transparen; AVALIACAO: assessment, grading; PRIVACIDADE: surveillance"
+W7167791356,0,1,1,0,1,0,0,1,"AUTORIA: academic integrity; PENS_CRITICO: critical thinking, reflection; ETICA: ethic; LETRAMENTO: ai literacy"
+W7168133846,1,0,0,0,0,0,0,0,"APR_ATIVA: active learning, metacogn, personaliz, scaffold, tutor"
+W7170058216,1,0,0,1,0,1,0,0,"APR_ATIVA: engagement, feedback, personaliz; VERIFICACAO: accurate; AVALIACAO: assessment"
+W7170198651,1,0,1,0,1,0,0,0,"APR_ATIVA: autorregula, personaliz, self-regulat, tutor; PENS_CRITICO: reflective; ETICA: ethic, ética"
+W7171405250,0,1,0,0,1,0,0,1,"AUTORIA: plagio; ETICA: transparen, ética, éticas; LETRAMENTO: formación docente"
+W7171427223,1,0,1,0,1,0,0,0,APR_ATIVA: engagement; PENS_CRITICO: critical thinking; ETICA: responsib
+W7197039232,0,0,0,0,0,0,0,0,
+W7201936585,0,0,1,0,1,0,0,1,PENS_CRITICO: reflective; ETICA: ethic; LETRAMENTO: literac
+W7201992236,0,0,1,0,0,0,0,0,PENS_CRITICO: creativ
+W7202213203,1,0,0,1,1,1,0,0,"APR_ATIVA: personaliz, tutor; VERIFICACAO: hallucinat, inaccura; ETICA: responsib; AVALIACAO: assessment"
+W7203880345,0,0,0,0,0,0,0,0,
+W7203895710,1,1,0,0,1,0,0,0,"APR_ATIVA: engagement, personalis; AUTORIA: authorship; ETICA: transparen"
+W7203925215,1,0,0,0,0,0,0,0,"APR_ATIVA: engagement, feedback, personaliz, tutor"
+W7203954578,1,0,0,0,1,0,1,0,APR_ATIVA: tutor; ETICA: éticas; PRIVACIDADE: privacidade
+W7204004716,0,0,0,1,0,1,0,0,"VERIFICACAO: accuracy, hallucinat; AVALIACAO: examination"
+W7204213061,1,1,0,1,1,0,0,1,"APR_ATIVA: engagement; AUTORIA: authorship; VERIFICACAO: verification; ETICA: ethic, responsib; LETRAMENTO: literac"
+W7204278171,1,1,1,0,1,1,0,1,"APR_ATIVA: personalis; AUTORIA: academic integrity, cheat, detection tool, plagiar; PENS_CRITICO: critical thinking; ETICA: ethic; AVALIACAO: assessment; LETRAMENTO: ai literacy, prompting"
+W7204644790,0,0,0,0,0,0,0,0,
+W7204749911,1,0,0,0,1,0,0,0,"APR_ATIVA: personaliz; ETICA: ética, ético"
+W7204901502,0,0,0,1,0,0,0,0,VERIFICACAO: accuracy
+W7207634560,0,1,0,1,1,0,0,1,"AUTORIA: academic integrity; VERIFICACAO: verification; ETICA: ethic; LETRAMENTO: ai literacy, professional development"
+W7212038437,1,0,1,1,1,0,0,1,"APR_ATIVA: engagement, metacogn, self-regulat; PENS_CRITICO: cognitive offload, over-reliance, reflection; VERIFICACAO: accuracy; ETICA: equit; LETRAMENTO: literac"
+W7212220209,1,0,0,0,0,0,0,1,APR_ATIVA: engagement; LETRAMENTO: professional development
+W7213375814,1,0,0,0,1,0,0,0,APR_ATIVA: personaliz; ETICA: éticas
+W7213422726,0,0,0,0,1,0,0,1,ETICA: responsib; LETRAMENTO: literac
+W7213950790,0,0,0,1,0,0,0,0,"VERIFICACAO: accuracy, reliab"
+W7213955854,0,1,1,1,1,0,0,1,"AUTORIA: autoria; PENS_CRITICO: reflexiv; VERIFICACAO: verificação; ETICA: ética; LETRAMENTO: formação docente, letramento"

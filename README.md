@@ -20,7 +20,9 @@ artigo/        Artigo parcial (N1) em .docx e .pdf
 data/          Dataset (bruto e processado) + descrição (data/README.md)
 notebooks/     01 coleta · 02 preparação · 03 análise exploratória · 04 resultados parciais
 src/           coleta_openalex.py · preparacao.py · categorias.py (livro de códigos + baseline léxico)
-anotacao/      Protocolo de anotação e amostra estratificada (60 publicações) a anotar
+               gerar_pagina_anotacao.py · concordancia.py (kappa entre anotadores e padrão-ouro)
+anotacao/      Protocolo, amostra estratificada (60), página de anotação (pagina_anotacao.html),
+               rótulos exportados (rotulos/) e consenso (consenso/)
 prompts/       Prompt de classificação por LLM (v1)
 figuras/       Figuras geradas pelos notebooks
 ```
@@ -49,6 +51,7 @@ atualização contínua do catálogo).
 | Data | Autor | Descrição |
 |---|---|---|
 | 2026-09-25 | Daniel Ribeiro Pauleti | Criação do repositório: coleta, preparação, EDA, baselines e artigo parcial (N1). |
+| 2026-11-20 | Daniel Ribeiro Pauleti | Codebook v1.1 (critérios de inclusão/exclusão), página de anotação, protocolo com dois anotadores e script de concordância. |
 
 ## Licença e uso de dados
 Metadados do OpenAlex sob CC0. Os resumos pertencem aos autores/editoras e são usados para

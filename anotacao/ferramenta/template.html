@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<!--
+Projeto: Análise de Recomendações Pedagógicas para o Uso de Inteligência Artificial
+         Generativa na Educação a Distância por meio de PLN e LLMs
+Integrante: Daniel Ribeiro Pauleti - RA 10723162
+Arquivo: anotacao/ferramenta/template.html
+Síntese: modelo da página de anotação manual (padrão-ouro). O script
+         src/gerar_pagina_anotacao.py insere a amostra e o livro de códigos e gera
+         anotacao/pagina_anotacao.html, que funciona offline em qualquer navegador.
+Histórico de alterações:
+  2026-11-20 - Daniel Ribeiro Pauleti - Versão inicial.
+-->
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Anotação de Recomendações</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --surface: #ffffff; --ink: #1b1b1a; --ink-2: #55534e; --muted: #8a877f;
+    --line: #e2e0d9; --accent: #2a6fc9; --accent-soft: #e6eefa; --ok: #1d7a3a; --ok-soft: #e4f3e8;
+    --warn: #9a6400; --warn-soft: #fbf1dc; --danger: #b3261e;
+    --radius: 10px; --mono: ui-monospace, "Cascadia Mono", Consolas, monospace;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #141413; --surface: #1d1d1b; --ink: #f1f0ec; --ink-2: #c3c1b8; --muted: #8f8c84;
+      --line: #34332f; --accent: #6aa3ef; --accent-soft: #1d2a3d; --ok: #5cc27a; --ok-soft: #1a2e20;
+      --warn: #e2b04a; --warn-soft: #34290f; --danger: #f08a82; color-scheme: dark;
+    }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink);
+         font: 15px/1.5 system-ui, "Segoe UI", Roboto, sans-serif; }
+  button, input, textarea, select { font: inherit; color: inherit; }
+  button { cursor: pointer; }
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+  header { position: sticky; top: 0; z-index: 5; background: var(--surface);
+           border-bottom: 1px solid var(--line); }
+  .bar { max-width: 1280px; margin: 0 auto; padding: 10px 16px; display: flex;
+         gap: 12px; align-items: center; flex-wrap: wrap; }
+  .bar h1 { font-size: 16px; margin: 0 8px 0 0; font-weight: 650; }
+  .pill { font-size: 13px; color: var(--ink-2); background: var(--bg); border: 1px solid var(--line);
+          border-radius: 999px; padding: 3px 10px; white-space: nowrap; }
+  .seg { display: inline-flex; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+  .seg button { border: 0; background: transparent; padding: 5px 12px; font-size: 13px; }
+  .seg button[aria-pressed="true"] { background: var(--accent); color: #fff; }
+  .seg button:disabled { opacity: .45; cursor: not-allowed; }
+  .spacer { flex: 1; }
+  .btn { border: 1px solid var(--line); background: var(--surface); border-radius: 8px;
+         padding: 6px 12px; font-size: 13px; }
+  .btn:hover { border-color: var(--muted); }
+  .btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; font-weight: 600; }
+  .progress { height: 4px; background: var(--line); }
+  .progress > div { height: 100%; background: var(--ok); width: 0; transition: width .25s; }
+
+  main { max-width: 1280px; margin: 0 auto; padding: 18px 16px 40px;
+         display: grid; grid-template-columns: minmax(0, 1fr) 400px; gap: 20px; align-items: start; }
+  @media (max-width: 920px) { main { grid-template-columns: 1fr; } }
+  .card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); }
+  .doc { padding: 22px 26px; }
+  .meta { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 12px; }
+  .meta .pill.done { color: var(--ok); background: var(--ok-soft); border-color: transparent; }
+  .doc h2 { font-size: 20px; line-height: 1.35; margin: 0 0 14px; font-weight: 650; }
+  .abstract { font-size: 16.5px; line-height: 1.7; color: var(--ink); max-width: 75ch;
+              white-space: pre-wrap; }
+  .doi { margin-top: 14px; font-size: 13px; color: var(--muted); font-family: var(--mono); }
+
+  aside { position: sticky; top: 76px; display: flex; flex-direction: column; gap: 12px; }
+  @media (max-width: 920px) { aside { position: static; } }
+  .panel { padding: 14px; }
+  .panel h3 { font-size: 12px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted);
+              margin: 0 0 8px; font-weight: 650; }
+  .rule { font-size: 12.5px; color: var(--ink-2); margin: 0 0 10px; }
+  .cat { display: grid; grid-template-columns: 22px 1fr auto; gap: 2px 10px; align-items: start;
+         padding: 7px 8px; border-radius: 8px; border: 1px solid transparent; }
+  .cat:hover { background: var(--bg); }
+  .cat.on { background: var(--accent-soft); border-color: var(--accent); }
+  .cat input { width: 18px; height: 18px; margin: 2px 0 0; accent-color: var(--accent); }
+  .cat label { font-weight: 600; font-size: 14px; cursor: pointer; }
+  .cat .key { font-family: var(--mono); font-size: 11px; color: var(--muted); border: 1px solid var(--line);
+              border-radius: 4px; padding: 0 5px; }
+  .cat details { grid-column: 2 / 4; font-size: 12.5px; color: var(--ink-2); }
+  .cat summary { cursor: pointer; color: var(--muted); list-style: none; }
+  .cat summary::-webkit-details-marker { display: none; }
+  .cat summary::before { content: "▸ "; }
+  .cat details[open] summary::before { content: "▾ "; }
+  .cat dl { margin: 4px 0 2px; } .cat dt { font-weight: 600; color: var(--ink); } .cat dd { margin: 0 0 4px; }
+  .q { display: flex; gap: 8px; margin-top: 4px; }
+  .q button { flex: 1; border: 1px solid var(--line); background: var(--surface); border-radius: 8px; padding: 7px; }
+  .q button[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: #fff; font-weight: 600; }
+  .q button:disabled { opacity: .45; cursor: not-allowed; }
+  textarea { width: 100%; min-height: 64px; resize: vertical; border: 1px solid var(--line);
+             border-radius: 8px; padding: 8px; background: var(--surface); }
+  .msg { font-size: 12.5px; margin-top: 8px; min-height: 18px; }
+  .msg.warn { color: var(--warn); } .msg.err { color: var(--danger); }
+  .nav { display: flex; gap: 8px; }
+  .nav .btn { flex: 1; padding: 9px; font-size: 14px; }
+  .hint { font-size: 12px; color: var(--muted); margin-top: 6px; }
+
+  .grid { display: grid; grid-template-columns: repeat(10, 1fr); gap: 4px; }
+  .grid button { aspect-ratio: 1; border: 1px solid var(--line); background: var(--surface);
+                 border-radius: 5px; font-size: 11px; padding: 0; color: var(--ink-2); }
+  .grid button.done { background: var(--ok-soft); color: var(--ok); border-color: transparent; font-weight: 600; }
+  .grid button.cur { outline: 2px solid var(--accent); outline-offset: 1px; }
+
+  .overlay { position: fixed; inset: 0; background: rgba(0,0,0,.45); display: grid; place-items: center;
+             z-index: 20; padding: 16px; }
+  .modal { max-width: 520px; width: 100%; padding: 24px; }
+  .modal h2 { margin: 0 0 6px; font-size: 19px; }
+  .modal p { color: var(--ink-2); margin: 0 0 14px; font-size: 14px; }
+  .modal input[type=text] { width: 100%; padding: 9px 10px; border: 1px solid var(--line); border-radius: 8px;
+                            background: var(--surface); margin-bottom: 12px; }
+  .banner { max-width: 1280px; margin: 10px auto 0; padding: 0 16px; }
+  .banner div { background: var(--warn-soft); color: var(--warn); border-radius: 8px; padding: 8px 12px; font-size: 13px; }
+  [hidden] { display: none !important; }
+</style>
+</head>
+<body>
+<header>
+  <div class="bar">
+    <h1>Anotação de recomendações pedagógicas</h1>
+    <span class="pill" id="who">—</span>
+    <div class="seg" role="group" aria-label="Partição">
+      <button id="p-dev" data-p="desenvolvimento">Desenvolvimento (20)</button>
+      <button id="p-test" data-p="teste">Teste (40)</button>
+    </div>
+    <span class="pill" id="count">0/0</span>
+    <span class="spacer"></span>
+    <button class="btn" id="btn-import">Importar CSV</button>
+    <button class="btn primary" id="btn-export">Exportar CSV</button>
+    <input type="file" id="file" accept=".csv,text/csv" hidden>
+  </div>
+  <div class="progress"><div id="prog"></div></div>
+</header>
+<div class="banner" id="storage-warn" hidden><div>O navegador não permite salvar o progresso automaticamente nesta página. Exporte o CSV ao terminar cada sessão.</div></div>
+
+<main>
+  <article class="card doc" aria-live="polite">
+    <div class="meta">
+      <span class="pill" id="m-pos"></span>
+      <span class="pill" id="m-id"></span>
+      <span class="pill" id="m-ano"></span>
+      <span class="pill" id="m-lang"></span>
+      <span class="pill" id="m-status"></span>
+    </div>
+    <h2 id="d-title"></h2>
+    <div class="abstract" id="d-abs"></div>
+    <div class="doi" id="d-doi"></div>
+  </article>
+
+  <aside>
+    <section class="card panel">
+      <h3>Categorias recomendadas</h3>
+      <p class="rule">Marque só o que o texto <b>recomenda, propõe, orienta ou conclui</b>. Mencionar o tema não basta.</p>
+      <div id="cats"></div>
+    </section>
+    <section class="card panel">
+      <h3>Há recomendação pedagógica explícita?</h3>
+      <div class="q" role="group">
+        <button id="r-sim" data-v="1">Sim <span class="key">S</span></button>
+        <button id="r-nao" data-v="0">Não <span class="key">N</span></button>
+      </div>
+      <h3 style="margin-top:14px">Observações</h3>
+      <textarea id="obs" placeholder="Dúvidas, trecho decisivo, recomendação fora das 8 categorias…"></textarea>
+      <div class="msg" id="msg"></div>
+      <div class="nav" style="margin-top:8px">
+        <button class="btn" id="prev">← Anterior</button>
+        <button class="btn primary" id="next">Concluir e próxima →</button>
+      </div>
+      <div class="hint">Atalhos: 1–8 alternam categorias · S/N respondem · Ctrl+Enter conclui · ←/→ navegam (fora do campo de texto)</div>
+    </section>
+    <section class="card panel">
+      <h3>Documentos</h3>
+      <div class="grid" id="grid"></div>
+    </section>
+  </aside>
+</main>
+
+<div class="overlay" id="start" hidden>
+  <div class="card modal">
+    <h2>Identificação do anotador</h2>
+    <p>Use sempre o mesmo código (ex.: <b>A1</b> para o integrante e <b>A2</b> para o segundo anotador). Não consulte as anotações da outra pessoa nem saídas automáticas antes de concluir.</p>
+    <input type="text" id="who-in" placeholder="Código do anotador (ex.: A2)" maxlength="20" autocomplete="off">
+    <button class="btn primary" id="who-ok" style="width:100%;padding:9px">Começar</button>
+  </div>
+</div>
+
+<script>
+const DADOS = /*__DADOS__*/[];
+const CODEBOOK = /*__CODEBOOK__*/[];
+const VERSAO = "/*__VERSAO__*/";
+const CODIGOS = CODEBOOK.map(c => c.codigo);
+
+const store = {
+  ok: true,
+  get(k) { try { return JSON.parse(localStorage.getItem(k)); } catch { this.ok = false; return null; } },
+  set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch { this.ok = false; } },
+};
+const $ = id => document.getElementById(id);
+
+let anotador = store.get("anotacao:ultimo");
+let estado = {};          // openalex_id -> {cats:{}, tem, obs, concluido, segundos, atualizado_em}
+let particao = "desenvolvimento";
+let idx = 0, inicio = Date.now();
+
+function chave() { return "anotacao:" + anotador; }
+function carregar() { estado = store.get(chave()) || {}; }
+function salvar() { if (!anotador) return; store.set(chave(), estado); $("storage-warn").hidden = store.ok; }
+function docs() { return DADOS.filter(d => d.particao === particao); }
+function reg(id) {
+  if (!estado[id]) estado[id] = { cats: {}, tem: null, obs: "", concluido: false, segundos: 0, atualizado_em: "" };
+  return estado[id];
+}
+function devCompleto() { return DADOS.filter(d => d.particao === "desenvolvimento").every(d => estado[d.openalex_id]?.concluido); }
+
+function montarCategorias() {
+  $("cats").innerHTML = CODEBOOK.map((c, i) => `
+    <div class="cat" id="c-${c.codigo}">
+      <input type="checkbox" id="x-${c.codigo}" data-c="${c.codigo}">
+      <label for="x-${c.codigo}">${c.nome}</label>
+      <span class="key">${i + 1}</span>
+      <details><summary>critérios</summary><dl>
+        <dt>Definição</dt><dd>${c.definicao}</dd>
+        <dt>Inclui</dt><dd>${c.inclui}</dd>
+        <dt>Não inclui</dt><dd>${c.nao_inclui}</dd></dl></details>
+    </div>`).join("");
+  CODIGOS.forEach(c => $("x-" + c).addEventListener("change", e => marcar(c, e.target.checked)));
+}
+
+function acumularTempo() {
+  const d = docs()[idx]; if (!d) return;
+  const r = reg(d.openalex_id);
+  r.segundos += Math.round((Date.now() - inicio) / 1000); inicio = Date.now();
+}
+
+function marcar(c, v) {
+  const r = reg(docs()[idx].openalex_id);
+  r.cats[c] = v; if (v) r.tem = 1;
+  r.concluido = false; salvar(); render();
+}
+function responder(v) {
+  const r = reg(docs()[idx].openalex_id);
+  if (v === 0 && CODIGOS.some(c => r.cats[c])) return;
+  r.tem = v; r.concluido = false; salvar(); render();
+}
+
+function validar(r) {
+  if (r.tem === null) return ["err", "Responda se há recomendação pedagógica explícita."];
+  const algum = CODIGOS.some(c => r.cats[c]);
+  if (r.tem === 1 && !algum && !r.obs.trim())
+    return ["err", "Recomendação sem categoria: descreva-a em Observações."];
+  return null;
+}
+
+function concluir() {
+  const d = docs()[idx]; const r = reg(d.openalex_id);
+  r.obs = $("obs").value;
+  const erro = validar(r);
+  if (erro) { msg(...erro); return; }
+  acumularTempo();
+  r.concluido = true; r.atualizado_em = new Date().toISOString(); salvar();
+  const prox = docs().findIndex((x, i) => i > idx && !estado[x.openalex_id]?.concluido);
+  const qualquer = docs().findIndex(x => !estado[x.openalex_id]?.concluido);
+  ir(prox >= 0 ? prox : qualquer >= 0 ? qualquer : idx);
+  if (qualquer < 0) msg("ok", particao === "desenvolvimento"
+    ? "Partição de desenvolvimento concluída. Exporte o CSV e faça a reunião de consenso antes do teste."
+    : "Partição de teste concluída. Exporte o CSV.");
+}
+
+function ir(i) {
+  const d = docs()[idx];
+  if (d) { reg(d.openalex_id).obs = $("obs").value; acumularTempo(); salvar(); }
+  idx = Math.max(0, Math.min(docs().length - 1, i)); inicio = Date.now(); msg("", ""); render();
+  window.scrollTo({ top: 0 });
+}
+
+function msg(tipo, t) { const m = $("msg"); m.className = "msg " + (tipo === "ok" ? "" : tipo); m.textContent = t; }
+
+function render() {
+  const lista = docs(), d = lista[idx], r = reg(d.openalex_id);
+  const feitos = lista.filter(x => estado[x.openalex_id]?.concluido).length;
+  $("who").textContent = "Anotador: " + anotador;
+  $("count").textContent = `${feitos}/${lista.length} concluídos`;
+  $("prog").style.width = (100 * feitos / lista.length) + "%";
+  $("p-dev").setAttribute("aria-pressed", particao === "desenvolvimento");
+  $("p-test").setAttribute("aria-pressed", particao === "teste");
+  $("p-test").title = devCompleto() ? "" : "Conclua a partição de desenvolvimento primeiro";
+
+  $("m-pos").textContent = `${idx + 1} de ${lista.length}`;
+  $("m-id").textContent = d.openalex_id;
+  $("m-ano").textContent = d.ano;
+  $("m-lang").textContent = { en: "Inglês", pt: "Português", es: "Espanhol" }[d.idioma] || d.idioma;
+  $("m-status").textContent = r.concluido ? "Concluído" : "Pendente";
+  $("m-status").className = "pill" + (r.concluido ? " done" : "");
+  $("d-title").textContent = d.titulo;
+  $("d-abs").textContent = d.resumo;
+  $("d-doi").textContent = d.doi ? "doi:" + d.doi : "";
+
+  const algum = CODIGOS.some(c => r.cats[c]);
+  CODIGOS.forEach(c => { $("x-" + c).checked = !!r.cats[c]; $("c-" + c).classList.toggle("on", !!r.cats[c]); });
+  $("r-sim").setAttribute("aria-pressed", r.tem === 1);
+  $("r-nao").setAttribute("aria-pressed", r.tem === 0);
+  $("r-nao").disabled = algum;
+  if (document.activeElement !== $("obs")) $("obs").value = r.obs;
+  if (!$("msg").textContent && r.tem === 1 && !algum) msg("warn", "Recomendação fora das 8 categorias: descreva em Observações.");
+
+  $("grid").innerHTML = lista.map((x, i) =>
+    `<button class="${estado[x.openalex_id]?.concluido ? "done" : ""} ${i === idx ? "cur" : ""}" data-i="${i}"
+      aria-label="Documento ${i + 1}">${i + 1}</button>`).join("");
+}
+
+function trocarParticao(p) {
+  if (p === particao) return;
+  if (p === "teste" && !devCompleto() &&
+      !confirm("A partição de desenvolvimento ainda não foi concluída. O protocolo prevê concluir o desenvolvimento e a reunião de consenso antes do teste. Abrir o teste mesmo assim?")) return;
+  ir(idx); particao = p; idx = 0;
+  const pend = docs().findIndex(x => !estado[x.openalex_id]?.concluido);
+  ir(pend >= 0 ? pend : 0);
+}
+
+// ---------- CSV ----------
+function csvCampo(v) { v = v == null ? "" : String(v); return /[",\n;]/.test(v) ? '"' + v.replace(/"/g, '""') + '"' : v; }
+function exportar() {
+  const d0 = docs()[idx]; if (d0) { reg(d0.openalex_id).obs = $("obs").value; salvar(); }
+  const cab = ["anotador", "versao_codebook", "openalex_id", "particao", ...CODIGOS, "tem_recomendacao",
+               "observacoes", "concluido", "segundos", "atualizado_em"];
+  const linhas = DADOS.map(d => {
+    const r = estado[d.openalex_id] || { cats: {}, tem: null, obs: "", concluido: false, segundos: 0, atualizado_em: "" };
+    return [anotador, VERSAO, d.openalex_id, d.particao, ...CODIGOS.map(c => r.cats[c] ? 1 : 0),
+            r.tem ?? "", r.obs, r.concluido ? 1 : 0, r.segundos, r.atualizado_em].map(csvCampo).join(",");
+  });
+  const blob = new Blob(["﻿" + [cab.join(","), ...linhas].join("\r\n")], { type: "text/csv;charset=utf-8" });
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = `rotulos_${anotador}_${new Date().toISOString().slice(0, 10)}.csv`;
+  a.click(); URL.revokeObjectURL(a.href);
+}
+function parseCSV(txt) {
+  const rows = []; let row = [], f = "", q = false;
+  txt = txt.replace(/^﻿/, "");
+  for (let i = 0; i < txt.length; i++) {
+    const ch = txt[i];
+    if (q) { if (ch === '"' && txt[i + 1] === '"') { f += '"'; i++; } else if (ch === '"') q = false; else f += ch; }
+    else if (ch === '"') q = true;
+    else if (ch === ",") { row.push(f); f = ""; }
+    else if (ch === "\n" || ch === "\r") { if (ch === "\r" && txt[i + 1] === "\n") i++; row.push(f); rows.push(row); row = []; f = ""; }
+    else f += ch;
+  }
+  if (f || row.length) { row.push(f); rows.push(row); }
+  return rows.filter(r => r.length > 1);
+}
+function importar(txt) {
+  const [cab, ...rows] = parseCSV(txt);
+  const col = n => cab.indexOf(n);
+  if (col("openalex_id") < 0 || CODIGOS.some(c => col(c) < 0)) { alert("CSV em formato inesperado."); return; }
+  const outro = rows[0] && col("anotador") >= 0 ? rows[0][col("anotador")] : anotador;
+  if (outro && outro !== anotador && !confirm(`Este CSV é do anotador "${outro}", mas a sessão atual é "${anotador}". Importar mesmo assim?`)) return;
+  let n = 0;
+  rows.forEach(r => {
+    const id = r[col("openalex_id")]; if (!DADOS.some(d => d.openalex_id === id)) return;
+    const tem = r[col("tem_recomendacao")];
+    estado[id] = {
+      cats: Object.fromEntries(CODIGOS.map(c => [c, r[col(c)] === "1"])),
+      tem: tem === "" ? null : Number(tem), obs: r[col("observacoes")] || "",
+      concluido: r[col("concluido")] === "1", segundos: Number(r[col("segundos")]) || 0,
+      atualizado_em: r[col("atualizado_em")] || "",
+    }; n++;
+  });
+  salvar(); render(); msg("ok", `${n} registros importados.`);
+}
+
+// ---------- eventos ----------
+$("p-dev").onclick = () => trocarParticao("desenvolvimento");
+$("p-test").onclick = () => trocarParticao("teste");
+$("r-sim").onclick = () => responder(1);
+$("r-nao").onclick = () => responder(0);
+$("next").onclick = concluir;
+$("prev").onclick = () => ir(idx - 1);
+$("grid").onclick = e => { const b = e.target.closest("button"); if (b) ir(Number(b.dataset.i)); };
+$("obs").addEventListener("input", () => { const r = reg(docs()[idx].openalex_id); r.obs = $("obs").value; r.concluido = false; salvar(); });
+$("btn-export").onclick = exportar;
+$("btn-import").onclick = () => $("file").click();
+$("file").onchange = e => { const f = e.target.files[0]; if (f) f.text().then(importar); e.target.value = ""; };
+document.addEventListener("keydown", e => {
+  if (!$("start").hidden) return;
+  if (e.ctrlKey && e.key === "Enter") { e.preventDefault(); concluir(); return; }
+  if (["TEXTAREA", "INPUT"].includes(document.activeElement.tagName)) return;
+  const n = Number(e.key);
+  if (n >= 1 && n <= CODIGOS.length) { const c = CODIGOS[n - 1]; marcar(c, !reg(docs()[idx].openalex_id).cats[c]); }
+  else if (e.key.toLowerCase() === "s") responder(1);
+  else if (e.key.toLowerCase() === "n") responder(0);
+  else if (e.key === "ArrowRight") ir(idx + 1);
+  else if (e.key === "ArrowLeft") ir(idx - 1);
+});
+window.addEventListener("beforeunload", () => { const d = docs()[idx]; if (d && anotador && $("start").hidden) { reg(d.openalex_id).obs = $("obs").value; acumularTempo(); salvar(); } });
+
+function iniciar(nome) {
+  anotador = nome.trim().toUpperCase(); store.set("anotacao:ultimo", anotador);
+  carregar(); $("start").hidden = true;
+  particao = devCompleto() ? "teste" : "desenvolvimento";
+  const pend = docs().findIndex(x => !estado[x.openalex_id]?.concluido);
+  idx = pend >= 0 ? pend : 0; inicio = Date.now(); render();
+}
+$("who-ok").onclick = () => { const v = $("who-in").value; if (v.trim()) iniciar(v); else $("who-in").focus(); };
+$("who-in").addEventListener("keydown", e => { if (e.key === "Enter") $("who-ok").click(); });
+$("who").onclick = () => { $("who-in").value = anotador || ""; $("start").hidden = false; $("who-in").focus(); };
+$("who").style.cursor = "pointer"; $("who").title = "Trocar anotador";
+
+montarCategorias();
+if (anotador) iniciar(anotador); else { $("start").hidden = false; $("who-in").focus(); }
+</script>
+</body>
+</html>
