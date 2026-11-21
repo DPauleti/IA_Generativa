@@ -34,6 +34,9 @@ para citação da obra original.
 | `processed/funil_selecao.csv` | Quantidade de registros em cada etapa de seleção. |
 | `processed/rotulos_lexico.csv` | Rótulos do baseline léxico (8 categorias) e termos de evidência. |
 | `processed/grupos_kmeans.csv` | Grupo K-means (k = 8) de cada resumo em inglês. |
+| `processed/licencas.csv` | Licença de cada publicação segundo o OpenAlex (`coletar_licencas()` em `src/coleta_openalex.py`). |
+| `resultados/llm/*.jsonl` | Respostas dos LLMs (uma linha por publicação): rótulos, evidências aceitas/rejeitadas, resposta bruta, tokens e tempo. `historico/` guarda as execuções do prompt v1.2. |
+| `resultados/avaliacao/*.csv` | Tabelas da avaliação final (notebook 05): comparação dos métodos, concordância com os anotadores, operação dos LLMs, erros, panorama por ano e taxonomia. |
 
 ## Dicionário de dados — `processed/corpus.csv`
 | Coluna | Descrição |
@@ -56,3 +59,25 @@ para citação da obra original.
 | `texto` | `titulo + ". " + resumo` (entrada dos modelos) |
 
 **Dados pessoais:** nomes de autores e afiliações **não** foram coletados (minimização de dados).
+
+## Condições de uso e redistribuição dos resumos
+
+- **Metadados** (identificadores, DOI, título, ano, idioma, tipo, fonte, palavras-chave,
+  tópicos, citações): obtidos do OpenAlex sob licença **CC0** (domínio público).
+- **Resumos:** a licença CC0 do OpenAlex **não** se estende ao texto dos resumos, cujos
+  direitos pertencem aos autores e editoras. O OpenAlex distribui os resumos como índice
+  invertido; este repositório os reconstrói (`src/preparacao.py`). Situação das 208
+  publicações (`processed/licencas.csv`): **131 (63%) sob licenças Creative Commons**
+  (75 CC BY, 10 CC BY-SA, 2 CC BY-ND, 13 CC BY-NC, 11 CC BY-NC-SA, 20 CC BY-NC-ND),
+  3 com outra licença aberta e **74 sem licença informada**.
+- **Como os resumos são usados e redistribuídos aqui:** exclusivamente para fins
+  acadêmicos, não comerciais e de reprodutibilidade desta pesquisa, sempre com o DOI da obra
+  original, sem alteração do texto e sem uso para treinar modelos. Para as publicações sob
+  licença CC, a redistribuição segue os termos de cada licença (atribuição pelo DOI; as
+  cláusulas NC e ND são respeitadas, pois não há uso comercial nem obra derivada do texto).
+  Para as publicações sem licença informada, os resumos são mantidos apenas como trechos
+  necessários à verificação dos resultados, com base no uso para fins de estudo e pesquisa
+  com citação da fonte (Lei nº 9.610/1998, art. 46).
+- **Remoção:** titulares de direitos podem solicitar a retirada de um resumo abrindo uma
+  *issue* no repositório; o texto será removido e poderá ser reconstruído localmente pela API
+  do OpenAlex com `src/coleta_openalex.py` e `src/preparacao.py`.

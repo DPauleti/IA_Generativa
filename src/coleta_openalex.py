@@ -13,6 +13,7 @@
 #
 # Histórico de alterações:
 #   2026-09-25 - Daniel Ribeiro Pauleti - Versão inicial (consultas Q1, Q2, Q3).
+#   2026-11-21 - Daniel Ribeiro Pauleti - coletar_licencas(): licença de cada publicação.
 # =============================================================================
 import json
 import time
@@ -91,3 +92,24 @@ def main(saida: Path = Path(__file__).resolve().parents[1] / "data" / "raw") -> 
 
 if __name__ == "__main__":
     main()
+
+
+def coletar_licencas(corpus_csv: Path = Path(__file__).resolve().parents[1] / "data/processed/corpus.csv") -> None:
+    """Licença de cada publicação do corpus (melhor local de acesso aberto ou local
+    primário), usada para documentar as condições de redistribuição dos resumos."""
+    import pandas as pd
+    ids = pd.read_csv(corpus_csv)["openalex_id"].tolist()
+    linhas = []
+    for i in range(0, len(ids), 50):
+        r = requests.get(API, params={"filter": "openalex_id:" + "|".join(ids[i:i + 50]), "per_page": 50,
+                                      "select": "id,primary_location,best_oa_location"}, timeout=60)
+        for w in r.json()["results"]:
+            pl, bo = w.get("primary_location") or {}, w.get("best_oa_location") or {}
+            linhas.append({"openalex_id": w["id"].rsplit("/", 1)[-1],
+                           "licenca": bo.get("license") or pl.get("license")})
+        time.sleep(0.3)
+    d = pd.DataFrame({"openalex_id": ids}).merge(pd.DataFrame(linhas), how="left")
+    d["licenca"] = d["licenca"].fillna("nao_informada")
+    d["licenca_cc"] = d["licenca"].str.startswith("cc")
+    d.to_csv(corpus_csv.parent / "licencas.csv", index=False)
+    print(d["licenca"].value_counts().to_string())
