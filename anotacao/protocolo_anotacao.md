@@ -6,6 +6,7 @@ Arquivo: anotacao/protocolo_anotacao.md
 Síntese: livro de códigos e protocolo de anotação manual (padrão-ouro).
 Histórico de alterações:
   2026-09-25 - Daniel Ribeiro Pauleti - Versão inicial.
+  2026-11-21 - Daniel Ribeiro Pauleti - Registro da execução do desenvolvimento e v1.2.
   2026-11-20 - Daniel Ribeiro Pauleti - Protocolo com dois anotadores independentes,
                fases (desenvolvimento → consenso → congelamento → teste), distinção
                entre concordância e estabilidade e página de anotação.
@@ -47,6 +48,17 @@ saída automática (léxico, K-means ou LLM). A página de anotação não mostr
    (`--padrao-ouro`), gerando `anotacao/padrao_ouro_teste.csv`, que é a referência de
    avaliação de todos os métodos.
 
+## Registro da execução
+- **Desenvolvimento (v1.1):** κ médio entre A1 e A2 = 0,01; acordo exato em 25% dos
+  documentos (`consenso/pauta_consenso_desenvolvimento.md`). Causa principal: aplicação
+  diferente da regra "recomendação × menção".
+- **Consenso:** 33 divergências resolvidas (`consenso/divergencias_desenvolvimento.xlsx`);
+  padrão-ouro em `padrao_ouro_desenvolvimento.csv`. Regras R1, R2, R4, R5 e R6 aprovadas;
+  R3 rejeitada. Livro de códigos atualizado para **v1.2**.
+- **Calibração:** não realizada, por restrição de prazo. Consequência: não há medida de
+  concordância com a v1.2 antes do teste; o kappa do teste é a primeira medida com as
+  novas regras (limitação a relatar no artigo).
+
 ## Concordância × estabilidade
 - **Concordância entre anotadores** (A1 × A2, kappa de Cohen por categoria): mede se o
   livro de códigos é aplicado da mesma forma por pessoas diferentes. É a medida principal
@@ -66,7 +78,7 @@ saída automática (léxico, K-means ou LLM). A página de anotação não mostr
 5. Ao fim de cada sessão, **Exportar CSV** e salvar em `anotacao/rotulos/`
    (`rotulos_<anotador>_<data>.csv`). Em outro computador, use **Importar CSV**.
 
-## Categorias (livro de códigos v1.1)
+## Categorias (livro de códigos v1.2 — regras de decisão em `src/categorias.py` e na página)
 | Código | Categoria | Inclui | Não inclui |
 |---|---|---|---|
 | APR_ATIVA | Aprendizagem ativa | Tutoria, feedback formativo, prática guiada, personalização, autorregulação com IA como parceira de estudo | IA usada só pelo professor para gerar conteúdo; menção genérica a engajamento |

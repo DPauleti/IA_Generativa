@@ -18,21 +18,42 @@
 #   2026-11-20 - Daniel Ribeiro Pauleti - Codebook v1.1: critérios de inclusão e
 #                exclusão por categoria (CRITERIOS), usados na página de anotação.
 #                Padrões léxicos congelados antes da anotação do conjunto de teste.
+#   2026-11-21 - Daniel Ribeiro Pauleti - Codebook v1.2: regras de decisão aprovadas
+#                na reunião de consenso da partição de desenvolvimento (REGRAS:
+#                R1, R2, R4, R5, R6; R3 rejeitada). Padrões léxicos inalterados.
 # =============================================================================
 import re
 
 import pandas as pd
 
-VERSAO_CODEBOOK = "1.1"
+VERSAO_CODEBOOK = "1.2"
 
-# Regra geral: marcar a categoria apenas quando o texto RECOMENDA, PROPÕE, ORIENTA
-# ou CONCLUI algo sobre ela; a simples menção ao tema não basta.
+# Regras de decisão (v1.2). A numeração segue a pauta de consenso; R3 foi rejeitada.
+REGRAS = [
+    ("R1", "O que é recomendação",
+     "Conta apenas um enunciado prescritivo (should, recommend, suggest, need to, deve-se, "
+     "recomenda-se, implicações para a prática) ou uma conclusão que o próprio texto "
+     "transforma em orientação. Resultado descritivo (\"os estudantes perceberam o ChatGPT "
+     "como preciso\") não conta."),
+    ("R2", "Contexto não é recomendação",
+     "Riscos ou temas citados na introdução ou na motivação (\"levanta preocupações "
+     "éticas\") não marcam categoria."),
+    ("R4", "Fora do escopo",
+     "Documento que não trata de educação com IA generativa: todas as categorias 0, "
+     "\"há recomendação\" 0 e observação \"fora do escopo\"."),
+    ("R5", "Aprendizagem ativa × Avaliação",
+     "Feedback para aprender → Aprendizagem ativa; notas, correção, desenho de provas e "
+     "regras de uso da IA em avaliações → Avaliação."),
+    ("R6", "Evidência obrigatória",
+     "Para cada categoria marcada, registrar o trecho decisivo do resumo."),
+]
+
 # código -> (inclui, não inclui)
 CRITERIOS = {
-    "APR_ATIVA": ("Tutoria, feedback formativo, prática guiada, personalização e "
-                  "autorregulação com IA como parceira de estudo.",
+    "APR_ATIVA": ("Tutoria, feedback formativo (para aprender), prática guiada, "
+                  "personalização e autorregulação com IA como parceira de estudo.",
                   "IA usada só pelo professor para gerar conteúdo; menção genérica a "
-                  "'engajamento' sem orientação de uso."),
+                  "'engajamento' sem orientação de uso; notas e correção (usar AVALIAÇÃO)."),
     "AUTORIA": ("Plágio, declaração/transparência do uso, políticas de integridade, "
                 "detectores de texto gerado, autoria dos trabalhos.",
                 "Ética genérica sem relação com autoria (usar ÉTICA)."),
@@ -48,9 +69,9 @@ CRITERIOS = {
               "Privacidade (usar PRIVACIDADE) e integridade acadêmica (usar AUTORIA), "
               "salvo se o texto também tratar de ética em sentido amplo."),
     "AVALIACAO": ("Redesenho de avaliações (autênticas, orais, por processo), regras de "
-                  "uso da IA em avaliações, correção/feedback avaliativo com IA.",
+                  "uso da IA em avaliações, notas, correção e desenho de provas com IA.",
                   "'Avaliação' no sentido de avaliar o próprio estudo, a ferramenta ou "
-                  "um programa."),
+                  "um programa; feedback formativo para aprender (usar APR_ATIVA)."),
     "PRIVACIDADE": ("Dados pessoais de estudantes, consentimento, segurança da "
                     "informação, LGPD/GDPR.",
                     "—"),

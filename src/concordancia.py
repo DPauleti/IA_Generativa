@@ -18,6 +18,8 @@
 #
 # Histórico de alterações:
 #   2026-11-20 - Daniel Ribeiro Pauleti - Versão inicial.
+#   2026-11-21 - Daniel Ribeiro Pauleti - Resumo incluído na planilha de divergências;
+#                consenso lido do .xlsx (Excel) com verificação de correspondência.
 # =============================================================================
 import argparse
 from pathlib import Path
@@ -68,12 +70,14 @@ def relatorio(a: pd.DataFrame, b: pd.DataFrame, nome_a: str, nome_b: str) -> pd.
 
 def divergencias(a, b, nome_a, nome_b) -> pd.DataFrame:
     ids = a.index.intersection(b.index)
-    titulos = pd.read_csv(RAIZ / "anotacao/amostra_anotacao.csv", encoding="utf-8-sig").set_index("openalex_id")["titulo"]
+    amostra = pd.read_csv(RAIZ / "anotacao/amostra_anotacao.csv", encoding="utf-8-sig").set_index("openalex_id")
+    titulos, resumos = amostra["titulo"], amostra["resumo"]
     linhas = []
     for i in ids:
         for c in ROTULOS:
             if int(a.at[i, c]) != int(b.at[i, c]):
-                linhas.append({"openalex_id": i, "titulo": titulos.get(i, ""), "rotulo": c,
+                linhas.append({"openalex_id": i, "titulo": titulos.get(i, ""), "resumo": resumos.get(i, ""),
+                               "rotulo": c,
                                nome_a: int(a.at[i, c]), nome_b: int(b.at[i, c]),
                                f"obs_{nome_a}": a.at[i, "observacoes"], f"obs_{nome_b}": b.at[i, "observacoes"],
                                "consenso": "", "justificativa": ""})
@@ -84,8 +88,20 @@ def padrao_ouro(a, b, particao, nome_a, nome_b) -> pd.DataFrame:
     """Acordos entre os anotadores + decisões de consenso preenchidas."""
     ids = a.index.intersection(b.index)
     ouro = a.loc[ids, ROTULOS].astype(int).copy()
-    arq = DIR_CONSENSO / f"divergencias_{particao}.csv"
-    cons = pd.read_csv(arq, encoding="utf-8-sig")
+    # o consenso pode ser preenchido no Excel (.xlsx) ou no próprio CSV
+    arq = DIR_CONSENSO / f"divergencias_{particao}.xlsx"
+    if arq.exists():
+        cons = pd.read_excel(arq)
+    else:
+        arq = arq.with_suffix(".csv")
+        cons = pd.read_csv(arq, encoding="utf-8-sig")
+    esperadas = set(map(tuple, divergencias(a, b, nome_a, nome_b)[["openalex_id", "rotulo"]].values))
+    if set(map(tuple, cons[["openalex_id", "rotulo"]].values)) != esperadas:
+        raise ValueError(f"{arq.name} não corresponde às divergências atuais entre {nome_a} e {nome_b}")
+    if not cons["consenso"].dropna().isin([0, 1]).all():
+        raise ValueError("a coluna 'consenso' deve conter apenas 0 ou 1")
+    # versão CSV limpa (UTF-8, vírgula) para reprodutibilidade
+    cons.to_csv(DIR_CONSENSO / f"divergencias_{particao}_consenso.csv", index=False, encoding="utf-8-sig")
     faltam = cons["consenso"].isna().sum()
     if faltam:
         raise ValueError(f"{faltam} divergências sem consenso em {arq}")

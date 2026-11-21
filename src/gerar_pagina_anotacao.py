@@ -13,6 +13,7 @@
 #
 # Histórico de alterações:
 #   2026-11-20 - Daniel Ribeiro Pauleti - Versão inicial.
+#   2026-11-21 - Daniel Ribeiro Pauleti - Inclui as regras de decisão (codebook v1.2).
 # =============================================================================
 import html
 import json
@@ -20,7 +21,7 @@ from pathlib import Path
 
 import pandas as pd
 
-from categorias import CATEGORIAS, CRITERIOS, VERSAO_CODEBOOK
+from categorias import CATEGORIAS, CRITERIOS, REGRAS, VERSAO_CODEBOOK
 
 RAIZ = Path(__file__).resolve().parents[1]
 
@@ -36,12 +37,15 @@ def main() -> None:
                  "inclui": html.escape(CRITERIOS[c][0]), "nao_inclui": html.escape(CRITERIOS[c][1])}
                 for c, (nome, defin, _) in CATEGORIAS.items()]
 
+    regras = [{"id": i, "titulo": html.escape(t), "texto": html.escape(x)} for i, t, x in REGRAS]
+
     def js(obj):  # JSON seguro dentro de <script>
         return json.dumps(obj, ensure_ascii=False).replace("</", "<\\/")
 
     modelo = (RAIZ / "anotacao/ferramenta/template.html").read_text(encoding="utf-8")
     pagina = (modelo.replace("/*__DADOS__*/[]", js(dados))
                     .replace("/*__CODEBOOK__*/[]", js(codebook))
+                    .replace("/*__REGRAS__*/[]", js(regras))
                     .replace("/*__VERSAO__*/", VERSAO_CODEBOOK))
     saida = RAIZ / "anotacao/pagina_anotacao.html"
     saida.write_text(pagina, encoding="utf-8")
