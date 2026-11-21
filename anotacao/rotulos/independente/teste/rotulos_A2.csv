@@ -1,0 +1,62 @@
+﻿anotador,versao_codebook,openalex_id,particao,APR_ATIVA,AUTORIA,PENS_CRITICO,VERIFICACAO,ETICA,AVALIACAO,PRIVACIDADE,LETRAMENTO,tem_recomendacao,observacoes,concluido,segundos,atualizado_em
+A2,1.2,W7164314708,teste,0,0,0,0,0,0,0,0,0,"Cita que estão usando, mas não recomenda ou fala como",1,978,2026-11-21T01:02:55.560Z
+A2,1.2,W4409433843,teste,0,0,0,0,1,0,0,0,1," However, concerns about academic integrity, data privacy, and ethical implications persisted across the studies.
+
+Fala que nos estudos esses temas persistiram.",1,126,2026-11-21T01:04:31.406Z
+A2,1.2,W7212220209,teste,0,0,0,0,0,0,0,0,1,"Cita que usavam como aprendizagem ativa, mas não recomenda",1,122,2026-11-21T01:05:53.288Z
+A2,1.2,W7122477614,teste,1,0,0,0,0,0,0,0,1," One of its most notable contributions is its capacity to deliver personalized feedback, which has the potential to enhance student learning and academic performance",1,122,2026-11-21T01:07:11.716Z
+A2,1.2,W7111142382,teste,0,0,0,0,0,0,0,0,0,"Cita aprendizagem ativa, mas não recomenda",1,49,2026-11-21T01:07:40.236Z
+A2,1.2,W7165014212,teste,0,0,0,0,1,0,0,0,1,"the need for guidance for ethical and responsible use of Generative Artificial Intelligence (GenAI) in class discussions. 
+
+Não fala como, mas como ele diz que será um tópico abordado, marquei",1,165,2026-11-21T01:11:13.222Z
+A2,1.2,W4404465350,teste,0,0,0,0,0,0,0,0,0,"Cita sobre ética, mas não fala como",1,87,2026-11-21T01:10:47.880Z
+A2,1.2,W7170198651,teste,0,0,0,0,0,0,0,0,0,,1,98,2026-11-21T01:11:24.188Z
+A2,1.2,W4416787633,teste,1,0,0,0,1,0,0,0,1,"Intelligent tutoring systems (ITS) utilise artificial intelligence to deliver personalised educational content, guidance, and feedback.
+
+content hallucination, generation of overly complex responses, and misalignment with defined course objectives, undermining pedagogical effectiveness and risking academic integrity.( impactos sociais do uso da IA generativa na educação = integridade academica)",1,91,2026-11-21T01:12:55.065Z
+A2,1.2,W4415521687,teste,0,0,0,0,0,0,0,0,1,Quase poderia ser aprendizagem ativa,1,157,2026-11-21T01:15:32.557Z
+A2,1.2,W4411893873,teste,1,0,0,0,0,0,0,0,1,"This presentation introduces an AI-powered learning tutor that leverages ChatGPT-4 in a context-restricted manner, operating strictly within the instructor’s lecture materials and spoken content.",1,60,2026-11-21T01:16:32.899Z
+A2,1.2,W4410684479,teste,0,0,0,0,1,0,0,0,1,"Uso responsável, no sentido que eles admitem que existem barreiras: la falta de formación docente en IAG y pensamiento crítico, la resistencia institucional y la ausencia de directrices claras. ",1,112,2026-11-21T01:18:24.717Z
+A2,1.2,W4411095338,teste,0,0,0,0,0,0,0,0,0,,1,20,2026-11-21T01:18:44.627Z
+A2,1.2,W4415709414,teste,1,0,0,0,0,0,0,0,1,"fine-tuned LLaMA-based Large Language Model (LLM) specifically designed for academic course recommendations...fine-tuning on structured course datasets to provide context-aware, personalized recommendations",1,31,2026-11-21T01:19:15.687Z
+A2,1.2,W7167247617,teste,0,0,0,0,0,0,0,0,0,,1,48,2026-11-21T01:20:03.491Z
+A2,1.2,W4396617103,teste,0,1,0,0,0,0,0,0,1,".On the other hand, some scholarly academic journals, including our Arab World English Journal, have announced guidelines for article authors. Authors must disclose the use of generative AI and AI-assisted technologies in the writing process....Authors must disclose the use of generative AI and AI-assisted technologies in the writing process.",1,78,2026-11-21T01:21:21.369Z
+A2,1.2,W7122362737,teste,0,0,0,0,0,0,0,0,0,,1,19,2026-11-21T01:21:40.253Z
+A2,1.2,W7162783856,teste,0,1,0,0,0,0,0,0,1,"ethical concerns regarding authorship, academic integrity, and the design of meaningful assessments
+
+In particular, it examines ethical principles such as transparency, accountability, autonomy, and fairness that should guide the integration of AI technologies in educational contexts.
+
+",1,102,2026-11-21T01:23:22.383Z
+A2,1.2,W7130554621,teste,0,0,0,0,0,0,0,0,0,,1,17,2026-11-21T01:23:38.896Z
+A2,1.2,W4408694239,teste,1,0,0,0,0,0,0,0,1,"ChatGPT, com a finalidade de fomentar a criatividade e a participação ativa dos discentes. Através da plataforma virtual de aprendizagem pertencente à instituição de ensino, os estudantes engajaram-se na troca de informações e colaboração mútua, sendo que o desafio em questão se mostrou um notório incremento no envolvimento dos participantes.",1,51,2026-11-21T01:24:30.273Z
+A2,1.2,W7141495593,teste,0,0,0,0,0,0,0,0,0,fora do escopo,1,15,2026-11-21T01:24:45.089Z
+A2,1.2,W7204901502,teste,0,0,0,0,0,0,0,0,0,,1,18,2026-11-21T01:25:02.755Z
+A2,1.2,W4353008813,teste,1,0,0,0,0,1,0,0,1,"""intelligent tutoring...content creation, and personalized career advice"" - Aprendizgem ativa
+
+""automated grading"" - Avaliação de aprendizagem",1,80,2026-11-21T01:26:22.460Z
+A2,1.2,W4414951037,teste,0,1,0,0,0,0,0,0,1,"""AI-detector flag rates and reliance on remote proctoring...AI-plagiarism flag rates""",1,104,2026-11-21T01:28:05.987Z
+A2,1.2,W4396886883,teste,1,0,0,0,0,0,0,0,1,"personalized feedback, enhanced accessibility, and dynamic approaches to teaching complex subjects, it also introduces concerns related to academic integrity, reduced critical thinking, and exacerbated online learning burnout. ",1,27,2026-11-21T01:28:32.835Z
+A2,1.2,W7135034321,teste,1,0,0,0,0,0,0,0,1,"deeply personalizing educational content
+
+Aqui n é do estudante, mas do professor, estou considerando como apredizagem ativa",1,52,2026-11-21T01:29:24.692Z
+A2,1.2,W7163184202,teste,0,0,0,0,0,0,0,0,0,,1,24,2026-11-21T01:29:48.765Z
+A2,1.2,W4410103166,teste,1,0,0,0,0,0,0,0,1,"curriculum-aligned recommendations that support human-in-the-loop educational decision
+
+Quase coloco letramento com IA porque ele fala prompting framework",1,91,2026-11-21T01:31:19.701Z
+A2,1.2,W7125967910,teste,1,0,0,0,0,0,0,0,1,"integrate ChatGPT, an advanced artificial intelligence language model, into distance science education. By addressing the specific challenges inherent in online learning environments,",1,42,2026-11-21T01:32:01.729Z
+A2,1.2,W7204278171,teste,1,1,0,0,0,0,0,0,1,"raises concerns about its impact on academic integrity,AI poses risks – including diminished critical thinking, plagiarism, cheating, and misrepresentation of knowledge - Autoria
+
+it also offers opportunities, such as personalised learning and assessment innovations - Aprendizagem ativa",1,69,2026-11-21T01:33:10.347Z
+A2,1.2,W4393177724,teste,0,0,0,0,0,0,0,0,0,,1,14,2026-11-21T01:33:24.187Z
+A2,1.2,W4411493158,teste,0,0,0,0,0,0,0,0,0,"Como ele não fala explicitamente não coloquei privacidade, mas usar rosto, cara e voz viola a LGPD",1,109,2026-11-21T01:35:12.934Z
+A2,1.2,W4406862817,teste,0,0,0,0,0,0,0,0,0,,1,27,2026-11-21T01:35:39.925Z
+A2,1.2,W7167619273,teste,0,0,0,0,0,1,0,0,1,A análise dos resultados evidenciou a contribuição da formação para o uso eficaz do ChatGPT nas práticas pedagógicas dos professores participantes,1,43,2026-11-21T01:36:22.479Z
+A2,1.2,W4417451686,teste,0,0,0,0,0,0,0,1,1,research on AI literacy,1,56,2026-11-21T01:37:18.005Z
+A2,1.2,W4407030373,teste,1,0,0,0,0,0,0,0,1, These are then integrated into the LLM knowledge graph builder to ensure the hierarchical structure of the overall course framework....better meets the actual needs of the students. ,1,76,2026-11-21T01:38:35.902Z
+A2,1.2,W7131128545,teste,0,0,0,0,0,0,0,0,0,"Quase fala de aprendizagem ativa, só cita: Potential use cases in ODL, such as creating learning and assessment materials and providing support services, are examined""
+
+Quase fala de autoria e integridade ""like transparency, copyright, and academic integrity""
+",1,110,2026-11-21T01:40:24.264Z
+A2,1.2,W4393855080,teste,1,0,0,0,0,0,0,0,1,"GAI tools, particularly ChatGPT, to complement and enhance their teaching",1,36,2026-11-21T01:41:00.068Z
+A2,1.2,W4415572994,teste,1,0,0,0,0,0,0,0,1,"GenAI tools act as cognitive mediators, providing scaffolded support that enhances writing fluency, grammatical accuracy, and learner autonomy,",1,36,2026-11-21T01:41:36.276Z
+A2,1.2,W7160709897,teste,0,0,0,0,0,0,0,0,0,,1,11,2026-11-21T01:41:47.118Z

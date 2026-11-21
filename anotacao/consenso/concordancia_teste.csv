@@ -1,0 +1,10 @@
+﻿rotulo,categoria,n,acordo_%,kappa,prev_A1_%,prev_A2_%
+APR_ATIVA,Aprendizagem ativa,40,52.5,0.005,42.5,35.0
+AUTORIA,Autoria e integridade acadêmica,40,92.5,0.375,2.5,10.0
+PENS_CRITICO,Pensamento crítico,40,97.5,0.0,2.5,0.0
+VERIFICACAO,Verificação das respostas,40,97.5,0.0,2.5,0.0
+ETICA,Ética e uso responsável,40,67.5,0.097,32.5,10.0
+AVALIACAO,Avaliação da aprendizagem,40,90.0,-0.053,5.0,5.0
+PRIVACIDADE,Privacidade e proteção de dados,40,100.0,,0.0,0.0
+LETRAMENTO,Letramento em IA,40,90.0,-0.039,7.5,2.5
+tem_recomendacao,Há recomendação,40,50.0,-0.064,65.0,60.0

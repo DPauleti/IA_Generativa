@@ -19,7 +19,9 @@
 # Histórico de alterações:
 #   2026-11-20 - Daniel Ribeiro Pauleti - Versão inicial.
 #   2026-11-21 - Daniel Ribeiro Pauleti - Resumo incluído na planilha de divergências;
-#                consenso lido do .xlsx (Excel) com verificação de correspondência.
+#                consenso lido do .xlsx (Excel) com verificação de correspondência;
+#                rótulos independentes lidos da cópia congelada (rotulos/independente);
+#                planilha de divergências também em .xlsx (sem sobrescrever o consenso).
 # =============================================================================
 import argparse
 from pathlib import Path
@@ -36,8 +38,12 @@ ROTULOS = CODIGOS + ["tem_recomendacao"]
 
 
 def carregar(anotador: str, particao: str) -> pd.DataFrame:
-    """Última versão concluída de cada documento do anotador na partição."""
-    arquivos = sorted(DIR_ROTULOS.glob(f"rotulos_{anotador}_*.csv"))
+    """Rótulos INDEPENDENTES do anotador na partição. Usa a cópia congelada em
+    anotacao/rotulos/independente/<particao>/ (feita antes do consenso), para que
+    revisões posteriores ao consenso não alterem a medida de concordância. Sem a
+    cópia, usa a última versão concluída de cada documento nas exportações."""
+    congelado = DIR_ROTULOS / "independente" / particao / f"rotulos_{anotador}.csv"
+    arquivos = [congelado] if congelado.exists() else sorted(DIR_ROTULOS.glob(f"rotulos_{anotador}_*.csv"))
     if not arquivos:
         raise FileNotFoundError(f"Nenhum CSV de {anotador} em {DIR_ROTULOS}")
     df = pd.concat([pd.read_csv(a, encoding="utf-8-sig", dtype={"observacoes": str}) for a in arquivos])
@@ -132,7 +138,12 @@ def main() -> None:
     div = divergencias(a, b, args.anotador_a, args.anotador_b)
     arq = DIR_CONSENSO / f"divergencias_{args.particao}.csv"
     div.to_csv(arq, index=False, encoding="utf-8-sig")
-    print(f"\n{len(div)} divergências salvas em {arq} (preencha 'consenso' com 0/1 e a justificativa).")
+    xlsx = arq.with_suffix(".xlsx")
+    if xlsx.exists():  # nunca sobrescreve uma planilha de consenso já preenchida
+        print(f"\n{len(div)} divergências em {arq}; {xlsx.name} já existe e foi mantida.")
+    else:
+        div.to_excel(xlsx, index=False)
+        print(f"\n{len(div)} divergências salvas em {xlsx} (preencha 'consenso' com 0/1 e a justificativa).")
 
 
 if __name__ == "__main__":

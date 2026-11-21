@@ -1,0 +1,5 @@
+configuracao,docs,erros,categorias_propostas,rejeitadas_evidencia,taxa_rejeicao_%,tokens_entrada,tokens_saida,custo_US$,seg_por_doc
+M3 Claude Haiku 4.5 few-shot,208,0,422,6,1.4,791660,33914,0.96,2.41
+M3 Claude Haiku 4.5 zero-shot,208,0,437,10,2.3,513148,35686,0.69,2.77
+M3 Llama 3.1 8B few-shot,208,0,392,11,2.8,648016,27837,0.0,3.2
+M3 Llama 3.1 8B zero-shot,208,0,0,0,0.0,393632,8985,0.0,1.18

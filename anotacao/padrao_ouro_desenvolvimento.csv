@@ -1,11 +1,9 @@
 ﻿openalex_id,particao,APR_ATIVA,AUTORIA,PENS_CRITICO,VERIFICACAO,ETICA,AVALIACAO,PRIVACIDADE,LETRAMENTO,tem_recomendacao
-W4402988803,desenvolvimento,1,0,0,0,0,0,0,0,1
 W7128439520,desenvolvimento,0,0,0,0,0,0,0,0,0
 W4408494246,desenvolvimento,0,0,0,0,0,0,0,0,1
 W4392755720,desenvolvimento,0,0,0,0,0,0,0,0,0
 W7168133846,desenvolvimento,1,0,1,0,0,0,0,0,1
 W4410229794,desenvolvimento,1,0,0,0,0,1,0,0,1
-W4388490750,desenvolvimento,0,0,0,0,0,0,0,0,0
 W4393974814,desenvolvimento,1,0,0,0,0,0,0,0,1
 W7147353273,desenvolvimento,1,0,0,0,0,0,0,0,1
 W4412159127,desenvolvimento,1,0,0,0,0,0,0,0,1
@@ -19,3 +17,5 @@ W4406621547,desenvolvimento,1,0,0,0,0,0,0,0,1
 W4403073703,desenvolvimento,0,0,0,0,0,0,0,0,0
 W7126207768,desenvolvimento,0,0,0,1,0,0,0,0,1
 W4408256943,desenvolvimento,1,0,1,0,0,0,0,0,1
+W4388490750,desenvolvimento,0,0,0,0,0,0,0,0,0
+W4402988803,desenvolvimento,1,0,0,0,0,0,0,0,1

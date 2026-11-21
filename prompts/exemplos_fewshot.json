@@ -1,0 +1,37 @@
+{
+  "_descricao": "Exemplos do modo few-shot (prompt v1.2). Todos da partição de DESENVOLVIMENTO; os rótulos seguem o padrão-ouro de desenvolvimento (anotacao/padrao_ouro_desenvolvimento.csv) e as evidências são trechos literais do resumo. Escolhidos em 2026-11-21, antes de qualquer acesso aos rótulos da partição de teste.",
+  "exemplos": [
+    {
+      "openalex_id": "W7168133846",
+      "motivo": "recomendação de design com duas categorias (aprendizagem ativa e pensamento crítico/metacognição)",
+      "resposta": {
+        "tem_recomendacao": true,
+        "categorias": [
+          {"codigo": "APR_ATIVA", "evidencia": "The ITS design integrates constructivist learning principles, such as connecting new information to existing knowledge, providing adaptive scaffolding", "confianca": 0.9},
+          {"codigo": "PENS_CRITICO", "evidencia": "fostering learning motivation, and enhancing metacognitive skills", "confianca": 0.6}
+        ],
+        "recomendacao_resumida": "Projetar tutores inteligentes com LLMs sobre princípios construtivistas (andaimes adaptativos, metacognição) e apoiar intervenções do professor com análise de aprendizagem."
+      }
+    },
+    {
+      "openalex_id": "W4389729898",
+      "motivo": "texto em português; recomendação de uso da IA dentro da avaliação",
+      "resposta": {
+        "tem_recomendacao": true,
+        "categorias": [
+          {"codigo": "AVALIACAO", "evidencia": "solicitar que os discentes experienciassem o ChatGPT como primeira etapa da avaliação individual on-line", "confianca": 0.85}
+        ],
+        "recomendacao_resumida": "Incluir o uso orientado do ChatGPT como etapa da avaliação individual online."
+      }
+    },
+    {
+      "openalex_id": "W4400280294",
+      "motivo": "estudo descritivo de percepção: relata resultados sem orientar a prática (regra R1); temas éticos citados não contam (R2)",
+      "resposta": {
+        "tem_recomendacao": false,
+        "categorias": [],
+        "recomendacao_resumida": ""
+      }
+    }
+  ]
+}
