@@ -6,3 +6,5 @@ langdetect>=1.0.9
 nbformat>=5.9
 nbconvert>=7.16
 ipykernel>=6.29
+anthropic>=2.12
+python-dotenv>=1.0

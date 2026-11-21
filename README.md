@@ -21,9 +21,10 @@ data/          Dataset (bruto e processado) + descrição (data/README.md)
 notebooks/     01 coleta · 02 preparação · 03 análise exploratória · 04 resultados parciais
 src/           coleta_openalex.py · preparacao.py · categorias.py (livro de códigos + baseline léxico)
                gerar_pagina_anotacao.py · concordancia.py (kappa entre anotadores e padrão-ouro)
+               classificacao_llm.py (Claude Haiku 4.5 e Llama 3.1 8B, zero/few-shot)
 anotacao/      Protocolo, amostra estratificada (60), página de anotação (pagina_anotacao.html),
                rótulos exportados (rotulos/) e consenso (consenso/)
-prompts/       Prompt de classificação por LLM (v1)
+prompts/       Prompt de classificação por LLM (v1 da N1; v1.1 gerado de src/classificacao_llm.py)
 figuras/       Figuras geradas pelos notebooks
 ```
 
@@ -52,6 +53,7 @@ atualização contínua do catálogo).
 |---|---|---|
 | 2026-09-25 | Daniel Ribeiro Pauleti | Criação do repositório: coleta, preparação, EDA, baselines e artigo parcial (N1). |
 | 2026-11-20 | Daniel Ribeiro Pauleti | Codebook v1.1 (critérios de inclusão/exclusão), página de anotação, protocolo com dois anotadores e script de concordância. |
+| 2026-11-20 | Daniel Ribeiro Pauleti | Pipeline de classificação por LLMs (prompt v1.1, saída estruturada, validação de evidências). |
 
 ## Licença e uso de dados
 Metadados do OpenAlex sob CC0. Os resumos pertencem aos autores/editoras e são usados para
